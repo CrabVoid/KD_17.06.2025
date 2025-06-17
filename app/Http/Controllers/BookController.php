@@ -36,14 +36,14 @@ class BookController extends Controller
         return view('books.edit', ['editBook' => $book]);
     }
 
-    public function update(Request $request) {
+    public function update(Request $request, Book $book) {
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'author' => 'required|string',
             'released_at' => 'required|date',
         ]);
 
-        $book->update();
+        $book->update($data);
 
         return redirect()->route('book.show', $book)->with('status', 'Book updated successfully.');
     }
