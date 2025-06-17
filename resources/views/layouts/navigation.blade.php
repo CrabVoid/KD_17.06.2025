@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('book.index')" :active="request()->routeIs('book.index')">
                         {{ __('books') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('algo.bubble')" :active="request()->routeIs('algo.bubble')">
+                        {{ __('algo') }}
+                    </x-nav-link>
                 </div>
             </div>
 

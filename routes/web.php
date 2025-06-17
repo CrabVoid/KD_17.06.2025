@@ -2,11 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AlgoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,6 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('book.edit');
     Route::put('/books/{book}/update', [BookController::class, 'update'])->name('book.update');
     Route::delete('/books/{book}/destroy', [BookController::class, 'destroy'])->name('book.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/algo', [AlgoController::class, 'bubbleSort'])->name('algo.bubble');
 });
 
 require __DIR__.'/auth.php';
