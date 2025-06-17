@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class AlgoController extends Controller
 {
-    //
+    public function bubbleSort() {
+        return view();
+    }
 }
