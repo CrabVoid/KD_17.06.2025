@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,3 +25,4 @@
     <a href="{{ route('book.index') }}">All books</a>
 </body>
 </html>
+</x-app-layout>
